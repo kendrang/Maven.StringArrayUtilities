@@ -93,6 +93,7 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
+
         return false;
     }
 
@@ -102,7 +103,12 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        int counter = 0;
+        for (int i =0 ; i < array.length ; i++){
+            if (array[i]==value){counter += 1;
+            }
+        }
+        return counter;
     }
 
     /**
