@@ -1,5 +1,10 @@
 package com.zipcodewilmington;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -68,8 +73,20 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
+        boolean answer = true ;
+        String[] result = new String[array.length];
+        for (int i = array.length - 1; i >= 0; i--) {
+            result[array.length - 1 - i] = array[i];
+        }
+        if (Arrays.equals(array,result)) {
+            answer=  true;
+        } else {
+            answer= false;
+        }
+        return answer;
     }
+
+
 
     /**
      * @param array array of String objects
