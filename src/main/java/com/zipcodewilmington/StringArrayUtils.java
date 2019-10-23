@@ -1,9 +1,6 @@
 package com.zipcodewilmington;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by leon on 1/29/18.
@@ -93,8 +90,36 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
+        boolean[] abcCheckList = new boolean[26];
+        int listNumber = 0;
+        boolean result = true;
 
-        return false;
+        String tempString = "";
+        for (String n: array)
+            tempString+= n;
+        char[] charArray = tempString.toCharArray();
+
+
+        for (int i = 0 ; i < charArray.length; i++){
+            if ('A' <= charArray[i] &&
+                    charArray[i] <= 'Z')
+
+                listNumber = charArray[i] - 'A';
+
+            else if('a' <= charArray[i] &&
+                    charArray[i] <= 'z')
+
+                listNumber = charArray[i] - 'a';
+                abcCheckList[listNumber] = true;
+
+
+        }
+        for (int i = 0; i <= 25; i++)
+            if (!abcCheckList[i])
+               result = false;
+
+        else result =  true;
+        return result;
     }
 
     /**
