@@ -167,7 +167,17 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        return null;
+        List<String> removeString = new ArrayList<>();
+        removeString.add(array[0]);
+
+        for (int i =1 ; i < array.length ; i++){
+
+            if (array[i] != array[i-1]){
+                removeString.add(array[i]);
+
+            }
+        }
+        return removeString.toArray(new String[removeString.size()]);
     }
 
     /**
@@ -175,6 +185,7 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+
         return null;
     }
 
