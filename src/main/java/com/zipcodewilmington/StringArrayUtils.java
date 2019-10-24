@@ -1,5 +1,6 @@
 package com.zipcodewilmington;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 /**
@@ -185,8 +186,18 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+        String newArray = array[0];
 
-        return null;
+        for(int i =1; i < array.length; i++){
+            if (array[i-1] == array[i]){
+                newArray +=array[i];
+            }
+            else newArray+=  " "+ array[i];
+
+        }
+        String[] result = newArray.split(" ");
+        System.out.println(newArray);
+        return result;
     }
 
 
